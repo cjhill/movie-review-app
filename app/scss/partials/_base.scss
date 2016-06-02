@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    font-size: 100%;
+    line-height: 1.4;
+}
+
+body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    color: $base;
+    background: #E4E4E4;
+    font-family: $main-font;
+    word-wrap: break-word;
+}
+
+#wrap {
+    height: 100%;
+}

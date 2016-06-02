@@ -1,34 +1,31 @@
-<div class="jumbotron">
+<!-- <div class="jumbotron">
     <div class="container">
         <h1>Movie Review</h1>
         <p>{{ main.loggedInUser.firstname + ' ' + main.loggedInUser.lastname}} is logged in!</p>
     </div>
-</div>
+</div> -->
 
 <section id="movieListSection">
     <div class="container">
-        <div class="page-header">
+        <div class="mainTitle">
             <h1>Movies</h1>
         </div>
+        <div class="movieThumbContainer cf equal">
+            <div class="movieThumb" ng-repeat="movie in main.movies">
+                <div class="title">
+                    <h2>{{ movie.title }}</h2>
+                </div>
+                <div class="text">
+                    <p>{{ movie.description }}</p> <br>
+                    <!-- {{ movie.rating }} <br><br> -->
+                </div>
 
-        <table class="table table-bordered">
-            <thead>
-                <th>Movie Title</th>
-                <th>Description</th>
-                <th>Rating</th>
-                <th>Edit</th>
-                <th>Delete</th>
-            </thead>
-            <tbody>
-                <tr ng-repeat="movie in main.movies">
-                    <td>{{ movie.title }}</td>
-                    <td>{{ movie.description }}</td>
-                    <td>{{ movie.rating }}</td>
-                    <td><button class="btn btn-primary" ng-click="main.editMovie(movie)">Edit</button></td>
-                    <td><button class="btn btn-danger" ng-click="main.deleteMovie(movie)">Delete</button></td>
-                </tr>
-            </tbody>
-        </table>
+                <div class="button-group">
+                    <button class="" ng-click="main.editMovie(movie)">Edit</button>
+                    <button class="button-delete" ng-click="main.deleteMovie(movie)">Delete</button>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 

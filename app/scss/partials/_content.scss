@@ -1,0 +1,58 @@
+.mainTitle {
+    margin: 0 0 30px;
+
+    h1 {
+        color:  #9F9C9E;
+        font-size: 40px;
+        font-weight: bold;
+    }
+}
+
+.movieThumbContainer {
+
+    .movieThumb {
+        background-color: white;
+        @include row-machine(2, 2%);
+        box-shadow: 0 0 4px #949494;
+        float: left;
+        border-radius: 5px;
+
+        .title {
+            border-bottom: 1px solid  #E1E0E3;
+            padding: 15px 30px;
+
+            h2 {
+                font-size: 20px;
+                font-weight: bold;
+                line-height: 1;
+            }
+        }
+
+        .text {
+            padding: 20px 30px;
+            min-height: 150px;
+
+            p {
+                color: #535250;
+                line-height: 1.7;
+            }
+        }
+
+        .button-group {
+            padding: 20px 30px;
+
+            button {
+                color: white;
+                background-color: #4385F5;
+                border: none;
+                padding: 15px;
+                border-radius: 2px;
+                font-weight: bold;
+
+                &.button-delete {
+                    // background-color: #AB2944;
+                }
+            }
+        }
+    }
+}

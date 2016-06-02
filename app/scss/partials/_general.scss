@@ -1,0 +1,218 @@
+/* ==========================================================================
+   General
+   ========================================================================== */
+
+.container,
+.container-fluid {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.container {
+    max-width: 970px;
+
+    &.x-large {
+        max-width: 80%;
+    }
+
+    &.large-1440 {
+        max-width: 1440px;
+    }
+
+    &.large {
+        max-width: 1022px;
+
+        @include breakpoint('large') {
+            max-width: 992px;
+        }
+    }
+
+    &.small {
+        max-width: 886px;
+    }
+
+    &.x-small {
+        max-width: 748px;
+    }
+}
+
+%clearfix {
+    &:before,
+    &:after {
+        content: ' ';
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+.cf {
+    @extend %clearfix;
+}
+
+.hide,
+.hidden {
+    display: none;
+}
+
+.animate-hidden {
+    @extend %animate;
+    position: fixed;
+    width: 100%;
+    transform: translate(0px, -50px);
+    opacity: 0;
+
+}
+
+.show {
+    display: block;
+    position: relative;
+    transform: translate(0px, 0px);
+    opacity: 1;
+}
+
+.add-opacity {
+    opacity: 1;
+}
+
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px; width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+// Form Placeholder Style
+.ie-placeholder {
+    font-style: italic;
+    opacity: .5;
+    font-size: 17px;
+}
+
+// Equal Heights Remove
+@include breakpoint('small') {
+
+}
+
+/* Section
+   ========================================================================== */
+
+section {
+    padding: 50px 0;
+}
+
+/* Widths
+   ========================================================================== */
+
+.one-half {
+    float: left;
+    @include row-machine (2, 0%);
+
+    @include breakpoint('medium') {
+        @include row-machine(1, 0%);
+    }
+}
+
+/* Buttons
+   ========================================================================== */
+
+.btn {
+    background: $base;
+    color: white;
+    display: inline-block;
+    font-size: 47px;
+    line-height: 1;
+    padding: 15px 84px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    transition: background-color .3s;
+
+    &.small {
+        font-size: 32px;
+        padding: 15px 60px;
+    }
+
+    @include breakpoint('small') {
+        font-size: 32px;
+    }
+}
+
+/* Background
+   ========================================================================== */
+
+.background-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Floats
+   ========================================================================== */
+
+.float-right,
+.float-right-swap {
+    float: right;
+}
+
+.float-left,
+.float-left-swap {
+    float: left;
+}
+
+@include breakpoint('medium') {
+    .float-left-swap,
+    .float-right-swap {
+        float: none;
+    }
+}
+
+/* Animation
+   ========================================================================== */
+
+%animate {
+    transition-property: transform, opacity, top, color;
+    transition-duration: 1.5s;
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+%animate-2 {
+    transition-property: transform, box-shadow, padding, left, top, width, opacity, margin, font-size;
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0.35, 1, 0.33, 1);
+}
+
+%scale {
+    transform: scale(1.07);
+}
+
+.fade-me {
+    opacity: 0;
+    @extend %animate;
+
+    &.left-fade {
+        transform: translate(-100px, 50px)
+    }
+
+    &.right-fade {
+        transform: translate(100px, 50px)
+    }
+
+    &.up-fade {
+        transform: translate(0, 50px);
+    }
+
+    &.slow-up-fade {
+        transform: translate(0, 100px);
+    }
+
+    &.is-showing {
+        opacity: 1;
+        transform: translate(0px,0px);
+    }
+}
