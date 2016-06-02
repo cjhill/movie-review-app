@@ -6,31 +6,38 @@
 </div> -->
 
 <section id="movieListSection">
-    <div class="container">
+    <div class="container-fluid">
         <div class="mainTitle">
-            <h1>Movies</h1>
+            <h1><span>Google</span> Movies</h1>
         </div>
         <div class="movieThumbContainer cf equal">
             <div class="movieThumb" ng-repeat="movie in main.movies">
-                <div class="title">
-                    <h2>{{ movie.title }}</h2>
+                <div class="title cf">
+                    <div class="button-group cf">
+                        <button class="" ng-click="main.editMovie(movie)"></button>
+                        <button class="button-collapse" ng-click="main.collapseDescription(movie);"></button>
+                        <button class="button-delete" ng-click="main.deleteMovie(movie)"></button>
+                    </div>
                 </div>
-                <div class="text">
-                    <p>{{ movie.description }}</p> <br>
-                    <!-- {{ movie.rating }} <br><br> -->
-                </div>
+                <div class="text" ng-hide="main.collapse">
+                    <div class="movie-image" style="background-image: url('../images/{{ movie.image  }}')"></div>
 
-                <div class="button-group">
-                    <button class="" ng-click="main.editMovie(movie)">Edit</button>
-                    <button class="button-delete" ng-click="main.deleteMovie(movie)">Delete</button>
+                    <div class="content">
+                        <h2>{{ movie.title }}</h2>
+                        <p>{{ movie.description }}</p> <br>
+
+                        <div class="stars">
+                        </div>
+                    </div>
+                    <!-- {{ movie.rating }} <br><br> -->
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section id="addMovieSection">
-    <div class="container">
+<section id="addMovieSection" class="hide">
+    <div class="container-fluid">
         <div class="page-header">
             <h1>Add Movie</h1>
         </div>

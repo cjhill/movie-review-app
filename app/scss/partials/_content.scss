@@ -3,8 +3,13 @@
 
     h1 {
         color:  #9F9C9E;
-        font-size: 40px;
-        font-weight: bold;
+        font-size: 30px;
+        font-weight: 100;
+
+        span {
+            font-weight: bold;
+            font-size: 40px;
+        }
     }
 }
 
@@ -12,47 +17,74 @@
 
     .movieThumb {
         background-color: white;
-        @include row-machine(2, 2%);
-        box-shadow: 0 0 4px #949494;
+        @include row-machine(3, 2%);
         float: left;
-        border-radius: 5px;
 
         .title {
-            border-bottom: 1px solid  #E1E0E3;
-            padding: 15px 30px;
+            border-bottom: 1px solid  #f1f1f1;
+            padding: 20px;
 
-            h2 {
-                font-size: 20px;
-                font-weight: bold;
-                line-height: 1;
+            .button-group {
+                display: inline-block;
+            }
+
+            .button-group {
+                float: right;
+
+                button {
+                    color: white;
+                    background-color: #15BA63;
+                    border: none;
+                    padding: 6px;
+                    margin-right: 8px;
+                    border-radius: 50%;
+                    float: left;
+                    font-weight: bold;
+
+                    &.button-delete {
+                        background-color: #E9483E ;
+                    }
+
+                    &.button-collapse {
+                        background-color: #FCD521;
+                    }
+                }
             }
         }
 
         .text {
-            padding: 20px 30px;
-            min-height: 150px;
+            padding: 0 0 20px 0;
+            min-height: 190px;
 
-            p {
-                color: #535250;
-                line-height: 1.7;
+            .movie-image {
+                width: 100%;
+                padding-top: 50%;
+                margin: 0 0 20px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            .content {
+                padding: 0 20px;
+
+                h2 {
+                    font-size: 20px;
+                    margin: 0 0 10px;
+                    font-weight: bold;
+                    line-height: 1;
+                }
+
+                p {
+                    color: #535250;
+                    line-height: 1.7;
+                }
             }
         }
 
-        .button-group {
-            padding: 20px 30px;
-
-            button {
-                color: white;
-                background-color: #4385F5;
-                border: none;
-                padding: 15px;
-                border-radius: 2px;
-                font-weight: bold;
-
-                &.button-delete {
-                    // background-color: #AB2944;
-                }
-            }
+        @include breakpoint('small') {
+            @include row-machine(1,0%);
+            margin-bottom: 5% !important;
         }
     }
 }

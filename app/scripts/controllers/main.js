@@ -30,6 +30,12 @@ angular.module('movieReviewAppApp')
             this.newMovie = movieService.editMovie(movie);
         };
 
+        // Collapse Text
+        this.collapse = false;
+        this.collapseDescription = function() {
+            this.collapse = !this.collapse;
+        }
+
         // Logged In User
         this.loggedInUser = usersService.loggedInUser;
     }]);
