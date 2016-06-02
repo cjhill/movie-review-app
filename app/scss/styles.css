@@ -410,6 +410,7 @@ section {
 .movieThumbContainer .movieThumb {
   background-color: white;
   width: 32%;
+  border-radius: 5px;
   float: left; }
   .movieThumbContainer .movieThumb:nth-child(n) {
     margin-bottom: 2%;

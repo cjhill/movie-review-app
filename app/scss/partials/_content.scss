@@ -18,6 +18,7 @@
     .movieThumb {
         background-color: white;
         @include row-machine(3, 2%);
+        border-radius: 5px;
         float: left;
 
         .title {
