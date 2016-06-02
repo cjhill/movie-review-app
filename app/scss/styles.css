@@ -398,14 +398,18 @@ section {
 /* Main
    ========================================================================== */
 .mainTitle {
-  margin: 0 0 30px; }
+  margin: 0 0 30px;
+  color: #9F9C9E; }
   .mainTitle h1 {
-    color: #9F9C9E;
     font-size: 30px;
-    font-weight: 100; }
+    font-weight: 100;
+    float: left; }
     .mainTitle h1 span {
-      font-weight: bold;
-      font-size: 40px; }
+      font-weight: bold; }
+  .mainTitle p {
+    font-size: 17px;
+    float: right;
+    margin: 5px 0 0; }
 
 .movieThumbContainer .movieThumb {
   background-color: white;
@@ -418,6 +422,14 @@ section {
   .movieThumbContainer .movieThumb:nth-child(4n) {
     margin-bottom: 0;
     margin-right: 0; }
+  .movieThumbContainer .movieThumb.row-three {
+    width: 32%; }
+    .movieThumbContainer .movieThumb.row-three:nth-child(n) {
+      margin-bottom: 2%;
+      margin-right: 2%; }
+    .movieThumbContainer .movieThumb.row-three:nth-child(3n) {
+      margin-bottom: 0;
+      margin-right: 0; }
   .movieThumbContainer .movieThumb .title {
     border-bottom: 1px solid  #f1f1f1;
     padding: 20px; }

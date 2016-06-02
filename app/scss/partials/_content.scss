@@ -1,15 +1,21 @@
 .mainTitle {
     margin: 0 0 30px;
+    color:  #9F9C9E;
 
     h1 {
-        color:  #9F9C9E;
         font-size: 30px;
         font-weight: 100;
+        float: left;
 
         span {
             font-weight: bold;
-            font-size: 40px;
         }
+    }
+
+    p {
+        font-size: 17px;
+        float: right;
+        margin: 5px 0 0;
     }
 }
 
@@ -20,6 +26,10 @@
         @include row-machine(4, 2%);
         border-radius: 5px;
         float: left;
+
+        &.row-three {
+            @include row-machine(3, 2%);
+        }
 
         .title {
             border-bottom: 1px solid  #f1f1f1;
