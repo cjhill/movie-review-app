@@ -17,7 +17,7 @@
 
     .movieThumb {
         background-color: white;
-        @include row-machine(3, 2%);
+        @include row-machine(4, 2%);
         border-radius: 5px;
         float: left;
 
@@ -60,20 +60,22 @@
             .movie-image {
                 width: 100%;
                 padding-top: 50%;
-                margin: 0 0 20px;
+                margin: 0 0 30px;
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-position: center;
             }
 
             .content {
-                padding: 0 20px;
+                padding: 0 30px;
 
                 h2 {
                     font-size: 20px;
                     margin: 0 0 10px;
                     font-weight: bold;
                     line-height: 1;
+                    padding: 0 0 10px;
+                    border-bottom: 1px solid  #f1f1f1;
                 }
 
                 p {
