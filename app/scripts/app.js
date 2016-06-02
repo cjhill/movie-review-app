@@ -9,23 +9,23 @@
  * Main module of the application.
  */
 angular
-  .module('movieReviewAppApp', [
+    .module('movieReviewAppApp', [
     'ngAnimate',
     'ngRoute'
-  ])
-  .config(function ($routeProvider) {
+    ])
+    .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+        .when('/main', {
+            templateUrl: 'views/main.html',
+            controller: 'MainCtrl',
+            controllerAs: 'main'
+        })
+        .when('/', {
+            templateUrl: 'views/signup.html',
+            controller: 'UserCtrl',
+            controllerAs: 'user'
+        })
+        .otherwise({
+            redirectTo: '/'
+        });
+    });
