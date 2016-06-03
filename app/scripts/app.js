@@ -11,7 +11,8 @@
 angular
     .module('movieReviewAppApp', [
     'ngAnimate',
-    'ngRoute'
+    'ngRoute',
+    'firebase'
     ])
     .config(function ($routeProvider) {
     $routeProvider

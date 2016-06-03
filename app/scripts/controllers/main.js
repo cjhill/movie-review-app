@@ -8,7 +8,7 @@
  * Controller of the movieReviewAppApp
  */
 angular.module('movieReviewAppApp')
-    .controller('MainCtrl', ['moviesService', 'usersService', function (movieService, usersService) {
+    .controller('MainCtrl', ['moviesService', 'usersService', '$firebaseObject', function (movieService, usersService, $firebaseObject) {
         this.movies = movieService.getMovies();
         this.users = usersService.getUsers();
 
@@ -38,4 +38,7 @@ angular.module('movieReviewAppApp')
 
         // Logged In User
         this.loggedInUser = usersService.loggedInUser;
+
+
+
     }]);

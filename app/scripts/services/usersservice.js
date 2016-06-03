@@ -8,23 +8,28 @@
  * Service in the movieReviewAppApp.
  */
 angular.module('movieReviewAppApp')
-    .service('usersService', function () {
-        var users = [
-            {
-                firstname: 'Chris',
-                lastname: 'Hill',
-                username: 'cjhill0',
-                password: 'test',
-                loggedIn: false
-            },
-            {
-                firstname: 'Myron',
-                lastname: 'Maglott',
-                username: 'mm67',
-                password: 'test2',
-                loggedIn: false
-            }
-        ];
+    .service('usersService', ['$firebaseObject', function ($firebaseObject) {
+
+        // List of Users
+        var fire = new Firebase('https://google-showtimes.firebaseio.com'),
+            users = $firebaseObject(fire.child("users"));
+
+        // var users = [
+        //     {
+        //         firstname: 'Chris',
+        //         lastname: 'Hill',
+        //         username: 'cjhill0',
+        //         password: 'test',
+        //         loggedIn: false
+        //     },
+        //     {
+        //         firstname: 'Myron',
+        //         lastname: 'Maglott',
+        //         username: 'mm67',
+        //         password: 'test2',
+        //         loggedIn: false
+        //     }
+        // ];
 
         this.loggedInUser;
 
@@ -48,4 +53,4 @@ angular.module('movieReviewAppApp')
             }
         };
 
-    });
+    }]);
